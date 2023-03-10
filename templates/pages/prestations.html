@@ -1,0 +1,187 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+div class="container">
+    <div class="content" style="margin-top:50px; margin-bottom:50px;">
+                <h1 style="color: grey;">GateWay Digital en parténariat avec Google, vous présente ses solutions marketing et conception
+                    web.
+                </h1>
+                <p>
+                    Vous êtes chez GateWay Digital, votre agence de marketing et de conception web qui allie 
+                    expertise et innovation pour vous offrir les meilleures solutions numériques. En partenariat avec Google, 
+                    nous mettons à votre disposition notre savoir-faire et notre créativité 
+                    pour vous aider à atteindre vos objectifs d'affaires en ligne.
+                </p>
+                <p>
+                    Avec nous, vous bénéficiez de stratégies de marketing performantes, 
+                    de designs web attractifs et de technologies de pointe pour vous démarquer 
+                    de vos concurrents et atteindre vos cibles. Nous sommes passionnés par ce que nous
+                    faisons et nous aimons aider nos clients à réussir en ligne. Contactez-nous dès aujourd'hui 
+                    pour découvrir comment nous pouvons vous 
+                    aider à atteindre votre plein potentiel numérique.
+                </p>
+       <button class="btn btn-danger" onclick="myFunction()">Appellez Nous</button>
+    </div>
+</div>
+-->
+
+<!--// END new hero -->
+
+ <!-- HERO 
+
+ <div class="hero vh-100 d-flex align-items-center">
+    <div class="container">
+        <video autoplay muted loop id="hero_video">
+            <source src="hero_video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="row">
+            <div class="col-lg-7 mx-auto text-center">
+                <h1 class="display-4 text-white my-3">Connectez-vous avec votre public et satisfaites leurs envies
+                    grâce à nos solutions marketing</h1>
+              
+                
+            </div>
+        </div>
+    </div>
+</div>
+// END HERO-->
+<!--
+<!--
+PRODUCTS MEILLEURES VENTES-->
+<!--
+<section id="meilleures-ventes">
+    <div class="container">
+        <div class="row mb-5">
+        <a href="{% url 'store' %}"></a>
+        <div class="col-md-8 mx-auto text-center">
+            <h1 class="text-primary">Nos Prestations</h1>
+        
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard .
+            </p>
+         
+        </div>
+    </div>
+    
+    </div>
+    
+    <div class="container">
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-6 col-sm-6 mt-3">
+            <div class="card card-effect">
+                     <div class="iconbox">
+                       <a href="{{ product.get_url }}" class="image-wrap"> <img src="{{ product.product_img.url }}"></a>
+                     </div>
+                   <figcaption class="info-wrap">
+                 
+                    <a href="{{ product.get_url }}"  class="title">{{ product.product_name }}</a>
+                    <p>make aLe Lorem Ipsum est simplement du faux texte employé dans 
+                        la composition et la mise en page avant impression. Le Lorem Ipsum 
+                        est le faux texte standard de l'imprimerie depuis les années 1500.
+    
+                    </p>
+                    <a href="{{ product.get_url }}"><button class="btn btn-danger">En savoir plus</button></a>
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        {% endfor %}
+    </div> 
+    </div>
+    <!-- row.// -->
+    </section>
+    <!--// END MEILLEURES VENTES-->
+    -->
+    
+
+     
+    
+    
+    
+     
+    
+         <!--DEMANDE DE DEVIS-->
+        
+         <section id="devis" class="bg-light" style="margin-top: -90px">
+    
+            <div class="container">
+                <div class="row mb-5 ">
+                    <div class="col-md-8 mx-auto text-center">
+                        <h1 class="text-primary">DEMANDE DE DEVIS</h1>
+                        <h5>Avez-Vous Un Projet Digital? Nous sommes là Pour Vous Le Realiser</h5>
+                        <p>
+                            Renseignez attentivement le formulaire ci-après et nous reviendrons vers vous très rapidement avec la solution
+                            sur mesure. 
+                            Merci pour votre confiance.
+                        </p>
+                    </div>
+                </div>
+                <form action="" class="row g-3 justify-content-center">
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" placeholder="Nom" Required>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" placeholder="Prénom" Required>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="email" class="form-control" placeholder="Email"Required>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="numeric" class="form-control" placeholder="Téléphone" Required>
+                    </div>
+                    <div class="col-md-5">
+                       <input type="text" class="form-control" placeholder="Entreprise" Required>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="email" class="form-control" placeholder="Url" Required>
+                    </div>
+                   
+                    <div class="col-md-10" >
+                        <select class="form-select" style="border-radius: 0; background-color: rgba(235, 102, 50, 0.4);  color: var(--body); height: 56px;" aria-label="Default select example">
+                            <option selected>Quel est votre budget Marketting annuel?</option>
+                            <option value="1">€0 - €799</option>
+                            <option value="2">€800 - €2500</option>
+                            <option value="3">€2501 - €9000</option>
+                            <option value="4">€9001 - €25000</option>
+                            <option value="5">€25001 - €50000</option>
+                            <option value="6">€50000 et plus</option>
+                          </select>
+                    </div>
+    
+                    <div class="col-md-10">
+                        <select class="form-select" style="border-radius: 0; background-color: rgba(235, 102, 50, 0.4);  color: var(--body); height: 56px;" aria-label="Default select example">
+                            <option selected>Comment vous nous avez trouvé ?</option>
+                            <option value="7">Google</option>
+                            <option value="8">YouTube</option>
+                            <option value="9">LinkedIn</option>
+                            <option value="10">Articles</option>
+                            <option value="12">Bing</option>
+                            <option value="13">Bouche-à-oreille</option>
+                          </select>
+                    </div>
+                    
+                    <div class="col-md-10">
+                        <textarea name="" id ="" cols="30" rows="5" class="form-control" placeholder="Décrivez-nous votre projet"></textarea>
+                    </div>
+                    <div class="col-md-10 d-grid">
+                       <button class="btn btn-danger">JE DEMANDE MON DEVIS GRATUIT</button>
+                    </div>
+                </form>
+            </div>
+                  
+    
+            
+        </section>
+        
+        <!--END DEMANDE DE DEVIS-->
+    
+    <script src="static/js/js"></script>
+    <script src="static/js/jquery-3.3.1.slim.min.js"></script>
+    </body>
+
+{% endblock %}

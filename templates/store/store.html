@@ -1,0 +1,253 @@
+ {% extends 'base.html' %}
+
+ {% load static %}
+
+ {% block content %}
+
+
+  
+<section id="services">
+    <div class="container text-center ">
+        <div class="row">
+            <div class="col-12 intro">
+                 <h1 class="text-primary " style="margin-top: 70px;">NOS PRESTATIONS</h1>
+                </div>
+            <p class="col-12 intro text-left">Nous sommes une agence de marketing performante, dynamique et ambitieuse basée en Guadeloupe.
+                 Nous fournissons des services de référencement naturel, 
+                 de publicité en ligne, de marketing de contenu, de relations
+                  publiques numériques l'optimisation des taux de conversion (CRO) pour 
+                  les marques et les entreprises de différents secteurs et la conception et le développement de site web.</p>
+          
+            <p class="col-12 intro text-left">
+              Les RP numériques font référence à l'utilisation de canaux et 
+              d'outils numériques pour promouvoir une entreprise ou une organisation 
+              et ses produits ou services. Cela peut inclure l'utilisation des médias sociaux, 
+              du marketing par e-mail et d'autres
+               stratégies numériques pour atteindre et interagir avec 
+              les publics cibles.
+
+             </p>
+             <p class="col-12 intro text-left">
+              Les services CRO (optimisation du taux de conversion) visent à 
+              améliorer les performances d'un site Web ou d'une autre plate-forme 
+              en ligne en augmentant la vitesse à laquelle les visiteurs effectuent 
+              une action souhaitée, comme effectuer un achat ou remplir un formulaire de contact.
+              Cela peut impliquer l'analyse des données du site Web, l'exécution de tests A/B et
+              la modification de la conception et du contenu pour améliorer
+              l'expérience utilisateur et augmenter les conversions.
+             </p>
+             <p class="col-12 intro text-left">
+              Nous fixons des objectifs et des indicateurs clés de performance (KPIs) pour
+               augmenter les demandes de renseignements sur l'ensemble de nos services et 
+               répondre aux exigences des plans de croissance de l'entreprise, en développant 
+               et en mettant en œuvre la stratégie de marketing numérique de l'entreprise.
+                Nous améliorons continuellement les performances en surveillant les concurrents 
+                et l'espace marketing plus large pour identifier de
+               nouvelles opportunités et adapter notre approche.
+             </p>
+        </div>
+
+        <div class="row">
+      {% for product in products %}
+        <div class="col-lg-4 col-md-6">
+          <div class="service">
+              <div class="image-wrap">
+                <a href="{{ product.get_url }}" class="image-wrap"> <img src="{{ product.product_img.url }}"></a>
+              </div>       
+              <div class="content">
+                    <a href="{{ product.get_url }}"  class="title">{{ product.product_name|safe }}</a>
+
+                  
+                        <p {{ product.get_url }} class="introduction"> {{ product.intro_description|safe|linebreaks|truncatewords:30 }}</p>
+                    
+                      
+                
+                    <a href="{{ product.get_url }}" class="link-more">EN SAVOIR PLUS<i class="ri-arrow-right-line icon"></i></a>
+                </div>
+            </div>
+        
+        </div>
+      {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+  <nav class="mt-4" aria-label="Page navigation sample">
+    {% if products.has_other_pages %}
+      <ul class="pagination">
+
+        {% if products.has_previous %}
+        <li class="page-item"><a class="page-link"
+                href="?page={{products.previous_page_number}}">Précédente</a></li>
+        {% else %}
+        <li class="page-item disabled"><a class="page-link" href="#">Précédente</a></li>
+        {% endif %}
+
+       {% for i in products.paginator.page_range %}
+        {% if products.number == i %}
+        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+        {% endif %}
+       {% endfor %}
+
+       {% if products.has_next %}
+        <li class="page-item"><a class="page-link"  href="?page={{products.next_page_number}}">Suivante</a></li>
+        {% else %}
+
+        <li class="page-item disabled"><a class="page-link" href="#">Suivante</a></li>    
+        {% endif %}
+    </ul>
+    {% endif %}
+</nav>
+
+</div>
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<!-- customer review-->
+
+<br>
+<section class="section-review bg">
+  <div class="container">
+    <div class="row">
+			<div class="col-md-9">
+
+	<header class="section-heading">
+		<h3 class="text-primary">Les dires de nos clients</h3>  
+		
+	</header>
+
+	<article class="box mb-3">
+		<div class="icontext w-100">
+      <img class="logo" src="{% static 'img/' %}"  class="img-xs icon rounded-circle">
+			<div class="text">
+				<span class="date text-muted float-md-right">24.04.2020 </span>  
+				<h6 class="mb-1 text-primary">Mike John </h6>
+				
+			</div>
+		</div> <!-- icontext.// -->
+
+
+		<div class="mt-3">
+			<p>
+				Dummy comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip
+			</p>	
+		</div>
+  </article>
+
+  <article class="box mb-3">
+      <div class="icontext w-100">
+        <img class="logo" src="{% static 'img/' %}"  class="img-xs icon rounded-circle">
+        <div class="text">
+          <span class="date text-muted float-md-right">24.04.2020 </span>  
+          <h6 class="mb-1 text-primary">Eurenice Buffon </h6>
+          
+        </div>
+      </div> <!-- icontext.// -->
+  
+  
+      <div class="mt-3">
+        <p>
+          Dummy comment Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip
+        </p>	
+      </div>
+    </article>
+  </div>
+</section>
+
+	
+
+	</div> <!-- col.// -->
+</div> <!-- row.// -->
+
+
+<!-- customer review-->
+
+
+<!--DEMANDE DE DEVIS-->
+    
+<section id="devis" class="bg-light" style="margin-top: -90px">
+
+  <div class="container">
+      <div class="row mb-5 ">
+          <div class="col-md-8 mx-auto text-center">
+              <h1 class="text-primary">DEMANDE DE DEVIS</h1>
+              <h5>Avez-Vous Un Projet Digital? Nous sommes là Pour Vous Le Realiser</h5>
+              <p>
+                  Renseignez attentivement le formulaire ci-après et nous reviendrons vers vous très rapidement avec la solution
+                  sur mesure. 
+                  Merci pour votre confiance.
+              </p>
+          </div>
+      </div>
+      <form action="" class="row g-3 justify-content-center">
+          <div class="col-md-5">
+              <input type="text" class="form-control" placeholder="Nom" Required>
+          </div>
+          <div class="col-md-5">
+              <input type="text" class="form-control" placeholder="Prénom" Required>
+          </div>
+          <div class="col-md-5">
+              <input type="email" class="form-control" placeholder="Email"Required>
+          </div>
+          <div class="col-md-5">
+              <input type="numeric" class="form-control" placeholder="Téléphone" Required>
+          </div>
+          <div class="col-md-5">
+             <input type="text" class="form-control" placeholder="Entreprise" Required>
+          </div>
+          <div class="col-md-5">
+              <input type="email" class="form-control" placeholder="Url" Required>
+          </div>
+         
+          <div class="col-md-10" >
+              <select class="form-select" style="border-radius: 0; background-color: rgba(235, 102, 50, 0.4);  color: var(--body); height: 56px;" aria-label="Default select example">
+                  <option selected>Quel est votre budget Marketting annuel?</option>
+                  <option value="1">€0 - €799</option>
+                  <option value="2">€800 - €2500</option>
+                  <option value="3">€2501 - €9000</option>
+                  <option value="4">€9001 - €25000</option>
+                  <option value="5">€25001 - €50000</option>
+                  <option value="6">€50000 et plus</option>
+                </select>
+          </div>
+
+          <div class="col-md-10">
+              <select class="form-select" style="border-radius: 0; background-color: rgba(235, 102, 50, 0.4);  color: var(--body); height: 56px;" aria-label="Default select example">
+                  <option selected>Comment vous nous avez trouvé ?</option>
+                  <option value="7">Google</option>
+                  <option value="8">YouTube</option>
+                  <option value="9">LinkedIn</option>
+                  <option value="10">Articles</option>
+                  <option value="12">Bing</option>
+                  <option value="13">Bouche-à-oreille</option>
+                </select>
+          </div>
+          
+          <div class="col-md-10">
+              <textarea name="" id ="" cols="30" rows="5" class="form-control" placeholder="Décrivez-nous votre projet"></textarea>
+          </div>
+          <div class="col-md-10 d-grid">
+             <button class="btn btn-danger">JE DEMANDE MON DEVIS GRATUIT</button>
+          </div>
+      </form>
+  </div>
+        
+</section>
+
+<!--END DEMANDE DE DEVIS-->
+  
+
+
+
+{% endblock %} 
+
+    
+

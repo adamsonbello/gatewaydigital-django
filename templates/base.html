@@ -1,0 +1,43 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"  content="Agence de publicité et digital marketing en ligne à Sainte Rose, Guadeloupe">
+    <meta name="keywords" content="web design, digital marketing, création de site web à Sainte Rose, en Guadeloupe, en Martinique, à
+     Saint Martin, à Saint Barth, agence de publicité, marketing de contenu, email marketing, Google ads, Google analytics 360, Google marketing platform ">
+    <meta name="author" content="Bello Adamson">
+  
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-dc2NSrAXbAkjrdm9IYrX10fQq9SDG6Vjz7nQVKdKcJl3pC+k37e7qJR5MVSCS+wR" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/remixicon.css'%}">
+    <title>GateWay Digital |Solutions Marketing Digital et Développement Web</title>
+    <link href="{% static 'img/favicon-32x32.png' %}" rel="shortcut icon" type="image/x-icon">
+    <link href="{% static 'img/apple-touch-icon.png'%}" rel="shortcut icon" type="image/x-icon">
+    <link href="{% static 'img/android-chrome-512x512.png' %}" rel="shortcut icon" type="image/x-icon">
+    <link href="{% static 'img/site.webmanifest' %}" rel="shortcut icon" type="image/x-icon">
+    <link href="{% static 'img/favicon-16x16.png' %}" rel="shortcut icon" type="image/x-icon">
+</head>
+
+<body  id="home" data-bs-spy="scroll" data-bs-target=".navbar">
+
+    {% include 'pages/includes/navbar.html' %}
+   
+ 
+    {% block content %}
+    
+    // content
+    {% endblock %}
+    
+    {% include 'pages/includes/footer.html' %}

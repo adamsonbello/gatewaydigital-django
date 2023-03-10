@@ -1,0 +1,204 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+ 
+  
+
+  <!-- Banner -->
+  <section class="jumbotron jumbotron-fluid" style="margin-top: 50px;">
+    <div class="container">
+      <h1 class="display-4 text-primary">{{ single_product.product_name}}</h1>
+      <h6 class="lead text-primary">Votre partenaire en solutions marketing pour une performance exceptionnelle.</h6>
+      <a class="btn btn-danger btn-lg" href="#first" role="button">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Two -->
+ 
+  <section class="container">
+   
+    <div class="row align-items-center gy-10">
+      <div class="col-md-4">
+        <img src="{% static 'img/shopify.png' %}" class="img-fluid rounded" style="width: 70%;" alt="Responsive image">
+      </div>
+      <div class="col-md-8">
+        <h2 class="title text-primary">C'est quoi {{ single_product.product_name}}?</h2>
+        <p class="lead">{{single_product.description|safe}}</p>
+      </div>
+    </div>
+   
+  </section>
+
+  <!-- Three Column Section -->
+  <section class="container">
+  <div class="container ">
+    <div class="row text-left padding gy-5">
+     <div class="col-md-8">
+        <h3 class="title text-primary" >Pourquoi {{ single_product.subtitle }} est essentiel pour votre entreprise</h3>
+        <p class="lead">{{ single_product.description_2|safe }}</p>
+        <a href="#" class="btn btn-danger">Je contact GateWay Digital</a>
+      </div>
+      <div class="col-md-4">
+        <img src="" alt="Responsive image" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="spotlight">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-md-4">
+          <img src="" alt="Responsive image" class="img-fluid" />
+        </div>
+        <div class="col-md-8">
+          <h3 class="title text-primary">{{ single_product.subtitle1 }}</h3>
+          <p class="lead">{{ single_product.description_3|safe }}</p>
+          <ul class="actions stacked">
+            <a href="#" class="btn btn-danger">Je contact GateWay Digital</a>
+          </ul>
+
+      </div>
+    </div>
+   </section>
+
+   <!--Pense Bête-->
+   <section id="pense-bete">
+    <div class="container text-center ">
+        <div class="row">
+            <div class="col-12 intro">
+                 <h3 class="text-primary " style="margin-top: 70px;">Une Pense-bete</h3>
+            </div>
+            <p class="col-12 intro text-left">
+              Toutes les stratégies marketing sont conçues pour aider une entreprise à 
+              atteindre ses objectifs commerciaux, ce qui peut inclure la génération de profits. 
+              Cependant, cela ne signifie pas que toutes les stratégies marketing mènent 
+              automatiquement au profit pour l'entreprise.
+              Par exemple, certaines stratégies marketing peuvent être conçues pour améliorer 
+              la notoriété de la marque et la fidélité des clients, plutôt que pour générer des 
+              ventes immédiates. Dans ce cas, les avantages pour l'entreprise peuvent être plus à 
+              long terme, tels que la création d'une base de clients fidèles qui peuvent continuer 
+              à acheter les produits ou services de l'entreprise sur une période prolongée.
+              De plus, certaines stratégies marketing peuvent nécessiter un investissement initial
+               important, tel que la création d'une campagne publicitaire coûteuse, qui peut ne pas se 
+               traduire immédiatement par des profits. Cependant, ces investissements peuvent être 
+               nécessaires pour aider l'entreprise à se développer et à atteindre ses objectifs à long terme.
+              En fin de compte, chaque entreprise doit évaluer ses objectifs commerciaux et choisir 
+              les stratégies marketing qui lui permettront d'atteindre ces objectifs de la manière la 
+              plus efficace possible, que cela se traduise ou non par des profits immédiats.
+
+         </p>
+         <p class="col-12 intro text-left">
+          Il est vrai que de nombreuses stratégies marketing peuvent utiliser des méthodes 
+          similaires pour atteindre des objectifs différents. Cela est dû au fait que les méthodes
+           qui ont prouvé leur efficacité dans le passé ont tendance à être réutilisées et adaptées
+            à différentes situations et objectifs.
+          Par exemple, la publicité est une méthode couramment utilisée dans de nombreuses 
+          stratégies marketing pour atteindre différents objectifs tels que la génération de 
+          prospects, l'augmentation de la notoriété de la marque et la stimulation des ventes. 
+          De même, les médias sociaux sont souvent utilisés pour atteindre des objectifs tels 
+          que l'engagement des clients, la création d'une communauté en ligne et la promotion des 
+          produits ou services.
+          Cependant, bien que les méthodes puissent être similaires, il est important de noter que 
+          chaque stratégie marketing est unique en fonction des objectifs commerciaux spécifiques 
+          de l'entreprise. Les tactiques et les canaux utilisés peuvent varier considérablement en 
+          fonction de l'audience ciblée, du budget et des autres facteurs clés qui influencent les 
+          décisions marketing de l'entreprise.
+          En fin de compte, les stratégies marketing réussies sont celles qui sont conçues de 
+          manière stratégique pour atteindre des objectifs commerciaux spécifiques, en utilisant 
+          les méthodes les plus appropriées et en adaptant les tactiques en fonction des résultats 
+          de la campagne.
+
+
+         </p>
+          </div>
+      </div>
+    </section>
+   <!--Fin Pense Bête-->
+
+  
+  <!--DEMANDE DE DEVIS-->
+    
+  <section id="devis" class="bg-light" style="margin-top: -90px">
+
+    <div class="container">
+        <div class="row mb-5 ">
+            <div class="col-md-8 mx-auto text-center">
+                <h1 class="text-primary">DEMANDE DE DEVIS</h1>
+                <h5>Avez-Vous Un Projet Digital? Nous sommes là Pour Vous Le Realiser</h5>
+                <p>
+                    Renseignez attentivement le formulaire ci-après et nous reviendrons vers vous très rapidement avec la solution
+                    sur mesure. 
+                    Merci pour votre confiance.
+                </p>
+            </div>
+        </div>
+        <form action="" class="row g-3 justify-content-center">
+            <div class="col-md-5">
+                <input type="text" class="form-control" placeholder="Nom" Required>
+            </div>
+            <div class="col-md-5">
+                <input type="text" class="form-control" placeholder="Prénom" Required>
+            </div>
+            <div class="col-md-5">
+                <input type="email" class="form-control" placeholder="Email"Required>
+            </div>
+            <div class="col-md-5">
+                <input type="numeric" class="form-control" placeholder="Téléphone" Required>
+            </div>
+            <div class="col-md-5">
+               <input type="text" class="form-control" placeholder="Entreprise" Required>
+            </div>
+            <div class="col-md-5">
+                <input type="email" class="form-control" placeholder="Url" Required>
+            </div>
+           
+            <div class="col-md-10" >
+                <select class="form-select" style="border-radius: 0; background-color: rgba(235, 102, 50, 0.4);  color: var(--body); height: 56px;" aria-label="Default select example">
+                    <option selected>Quel est votre budget Marketting annuel?</option>
+                    <option value="1">€0 - €799</option>
+                    <option value="2">€800 - €2500</option>
+                    <option value="3">€2501 - €9000</option>
+                    <option value="4">€9001 - €25000</option>
+                    <option value="5">€25001 - €50000</option>
+                    <option value="6">€50000 et plus</option>
+                  </select>
+            </div>
+
+            <div class="col-md-10">
+                <select class="form-select" style="border-radius: 0; background-color: rgba(235, 102, 50, 0.4);  color: var(--body); height: 56px;" aria-label="Default select example">
+                    <option selected>Comment vous nous avez trouvé ?</option>
+                    <option value="7">Google</option>
+                    <option value="8">YouTube</option>
+                    <option value="9">LinkedIn</option>
+                    <option value="10">Articles</option>
+                    <option value="12">Bing</option>
+                    <option value="13">Bouche-à-oreille</option>
+                  </select>
+            </div>
+            
+            <div class="col-md-10">
+                <textarea name="" id ="" cols="30" rows="5" class="form-control" placeholder="Décrivez-nous votre projet"></textarea>
+            </div>
+            <div class="col-md-10 d-grid">
+               <button class="btn btn-danger">JE DEMANDE MON DEVIS GRATUIT</button>
+            </div>
+        </form>
+    </div>
+          
+</section>
+
+<!--END DEMANDE DE DEVIS-->
+    
+
+
+
+{% endblock  %}
+
